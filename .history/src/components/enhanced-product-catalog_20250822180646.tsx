@@ -1,0 +1,27 @@
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
+import { useQuery } from "@tanstack/react-query";
+import type { Product } from "../types/shared";
+import { EnhancedProductCard } from "./enhanced-product-card";
+import { Web3Background } from "./web3-background";
+
+export function EnhancedProductCatalog() {
+  const { data: products, isLoading } = useQuery<Product[]>({
+    queryKey: ['/api/products'],
+  });
+
+  return (
+    <Web3Background pattern="particles" intensity="low">
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+          <div className="text-center mb-16 animate-slide-in-up">
+            <h3 className="font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+              Featured <span className="text-web3-gradient">Coffee Collection</span>
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Discover our carefully curated selection of premium single-origin coffees, 
+              each with unique flavor profiles and seamless crypto payment options.
+            </p>
+          </div>
+
+          {isLoading ? (
