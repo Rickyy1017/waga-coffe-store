@@ -88,6 +88,19 @@
     position: relative;
   }
 
+  @media screen and (max-width: 768px) {
+    body {
+      background-attachment: scroll;
+    }
+  }
+
+  /* Additional fix for iOS Safari specifically */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      background-attachment: scroll;
+    }
+  }
+
   body::before {
     content: '';
     position: fixed;
