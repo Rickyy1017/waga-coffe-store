@@ -30,7 +30,7 @@ export class Web3Service {
         this.account = accounts[0] || null;
       });
 
-      return this.account;
+      return this.account!;
     } catch (error) {
       throw new Error('User rejected the connection request');
     }
@@ -50,7 +50,7 @@ export class Web3Service {
       throw new Error('Wallet not connected');
     }
 
-    return await this.web3.eth.getChainId();
+    return Number(await this.web3.eth.getChainId());
   }
 
   async sendEthTransaction(to: string, amount: string): Promise<string> {
@@ -66,7 +66,7 @@ export class Web3Service {
       value,
     });
 
-    return transaction.transactionHash;
+    return transaction.transactionHash as string;
   }
 
   async sendUSDCTransaction(to: string, amount: string): Promise<string> {
@@ -96,11 +96,11 @@ export class Web3Service {
       from: this.account,
     });
 
-    return transaction.transactionHash;
+    return transaction.transactionHash as string;
   }
 
   getAccount(): string | null {
-    return this.account;
+      return this.account as string;
   }
 
   isConnected(): boolean {

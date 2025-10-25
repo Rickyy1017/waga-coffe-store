@@ -10,6 +10,7 @@ export interface Product {
   origin: string;
   process: string;
   inventory: number;
+  badges?: string[];
 }
 
 export interface CartItem {

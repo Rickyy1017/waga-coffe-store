@@ -1,96 +1,140 @@
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
-import { Coffee, Wallet, ShoppingCart, Menu } from "lucide-react";
+import { Wallet, ShoppingCart, Menu, X } from "lucide-react";
 import { useWeb3 } from "../hooks/use-web3";
 import { useCart } from "../hooks/use-cart";
 import { useState } from "react";
 import { WalletModal } from "./wallet-modal";
 
 export function Header() {
-  const { wallet } = useWeb3();
+  const { wallet, connectWallet } = useWeb3();
   const { itemCount, openCart } = useCart();
   const [showWalletModal, setShowWalletModal] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navigation = [
+    { name: 'About Us', href: '#about' },
+    { name: 'Products', href: '#products' },
+    { name: 'Source', href: '#source' },
+    { name: 'Features', href: '#features' },
+    { name: 'Contact', href: '#contact' },
+  ];
 
   const formatAddress = (address: string) => {
     return `${address.slice(0, 6)}...${address.slice(-4)}`;
   };
 
+  const handleConnectWallet = async () => {
+    try {
+      await connectWallet('metamask');
+      setShowWalletModal(false);
+    } catch (error) {
+      // Error is already handled in the useWeb3 hook
+    }
+  };
+
   return (
     <>
-      <header className="bg-white shadow-xl  sticky top-0 z-50">
+      <header className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <h1 className="font-bold text-2xl text-coffee-brown flex items-center">
-                  <img 
-                    src="/images/WAGA.jpg" 
-                    alt="WAGA Coffee Store" 
-                    className="w-14 rounded-lg mr-2 object-cover bg-contain "
-                  />
-                  
-                </h1>
-              </div>
-              {/* <nav className="hidden md:ml-8 md:flex md:space-x-8">
-                <a href="#" className="text-gray-700 hover:text-coffee-brown transition-colors">
-                  Products
-                </a>
-                <a href="#" className="text-gray-700 hover:text-coffee-brown transition-colors">
-                  About
-                </a>
-                <a href="#" className="text-gray-700 hover:text-coffee-brown transition-colors">
-                  Brewing Guide
-                </a>
-              </nav> */}
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <h1 className="font-bold text-2xl text-white flex items-center">
+                <img
+                  src="/images/WAGA.jpg"
+                  alt="WAGA Coffee Store"
+                  className="w-14 rounded-lg mr-2 object-cover bg-contain"
+                />
+              </h1>
             </div>
-            
-            <div className="flex items-center gap-8 shadow-xl">
-              {/* Wallet Connection */}
+
+            {/* Desktop Navigation - Centered */}
+            <nav className="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
+              <div className="flex space-x-8">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-white/10"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </nav>
+
+            {/* Wallet and Cart - Right aligned */}
+            <div className="flex items-center gap-4">
               {wallet.isConnected ? (
-                <div className="hidden md:flex items-center px-4 py-2 bg-green-400  text-green-800 rounded-lg">
+                <div className="hidden md:flex items-center px-4 py-2 bg-white/10 text-white rounded-lg backdrop-blur-sm border border-white/20">
                   <Wallet className="mr-2 h-4 w-4" />
                   <span>{formatAddress(wallet.address!)}</span>
                 </div>
               ) : (
                 <Button
-                  onClick={() => setShowWalletModal(true)}
-                  className="hidden text-white cursor-pointer md:flex items-center bg-accent-blue hover:bg-blue-600"
+                  onClick={handleConnectWallet}
+                  className="text-white cursor-pointer md:flex items-center bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30"
                 >
-                  <Wallet className="mr-2 h-4 w-4 " />
+                  <Wallet className="mr-2 h-4 w-4" />
                   Connect Wallet
                 </Button>
               )}
 
-              {/* Shopping Cart */}
               <Button
                 variant="ghost"
                 size="icon"
-                className="relative text-white bg-green-600 cursor-pointer hover:bg-green-700"
+                className="relative text-white bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20"
                 onClick={openCart}
               >
                 <ShoppingCart className="h-6 w-6" />
                 {itemCount > 0 && (
-                  <Badge 
-                    variant="destructive" 
-                    className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-accent-orange"
+                  <Badge
+                    variant="destructive"
+                    className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-green-500"
                   >
                     {itemCount}
                   </Badge>
                 )}
               </Button>
 
-              {/* Mobile Menu */}
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu className="h-6 w-6" />
-              </Button>
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsMenuOpen(!isMenuOpen)}
+                  className="text-white/90 hover:text-white"
+                >
+                  {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/10 backdrop-blur-sm border-t border-white/20">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-white/90 hover:text-white block px-3 py-2 text-base font-medium transition-colors hover:bg-white/5 rounded-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </header>
 
-      <WalletModal 
-        isOpen={showWalletModal} 
-        onClose={() => setShowWalletModal(false)} 
+      <WalletModal
+        isOpen={showWalletModal}
+        onClose={() => setShowWalletModal(false)}
       />
     </>
   );
