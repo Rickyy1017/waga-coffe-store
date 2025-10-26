@@ -155,26 +155,7 @@
     /* Specific fixes for About Us section glassmorphism */
     .about-us-button {
       background-color: rgba(255, 255, 255, 0.2) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
-      backdrop-filter: blur(12px) !important;
-      border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    }
-
-    /* Force glassmorphism on all About Us section elements */
-    .about-us-card {
-      background-color: rgba(255, 255, 255, 0.1) !important;
-      -webkit-backdrop-filter: blur(12px) !important;
-      backdrop-filter: blur(12px) !important;
-      border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    }
-
-    .about-us-badge {
-      background-color: rgba(255, 255, 255, 0.2) !important;
-      -webkit-backdrop-filter: blur(4px) !important;
-      backdrop-filter: blur(4px) !important;
-      border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    }
-  }
+}
 
 @layer utilities {
   .text-coffee-brown {

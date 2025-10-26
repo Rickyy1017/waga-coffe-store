@@ -40,7 +40,7 @@ export function AboutUsSection() {
 
           <div className="grid grid-cols-2 gap-6">
             <div className="space-y-6">
-              <div className="about-us-card">
+              <div className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6">
                 <Coffee className="h-8 w-8 text-amber-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Premium Beans</h3>
                 <p className="text-white/80 text-sm">
@@ -48,7 +48,7 @@ export function AboutUsSection() {
                 </p>
               </div>
 
-              <div className="about-us-card">
+              <div className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6">
                 <Users className="h-8 w-8 text-blue-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Fair Trade</h3>
                 <p className="text-white/80 text-sm">
@@ -58,7 +58,7 @@ export function AboutUsSection() {
             </div>
 
             <div className="space-y-6 mt-12">
-              <div className="about-us-card">
+              <div className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6">
                 <Award className="h-8 w-8 text-green-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Quality Assured</h3>
                 <p className="text-white/80 text-sm">
@@ -66,7 +66,7 @@ export function AboutUsSection() {
                 </p>
               </div>
 
-              <div className="about-us-card">
+              <div className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6">
                 <Heart className="h-8 w-8 text-red-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Community Focused</h3>
                 <p className="text-white/80 text-sm">
