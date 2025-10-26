@@ -96,7 +96,7 @@
     background: url('/images/bg1.webp') no-repeat center center;
     background-size: cover;
     background-color: var(--background);
-    filter: blur(10px);
+    filter: blur(5px);
     z-index: -1;
   }
 
