@@ -18,7 +18,7 @@ export function FeaturesSection() {
       icon: Percent,
       title: "Lower Fees",
       description: "Enjoy reduced transaction costs compared to traditional payment methods and credit cards.",
-      color: "red"
+      color: "brown"
     },
     {
       icon: Lock,
@@ -46,8 +46,7 @@ export function FeaturesSection() {
     brown: "bg-coffee-brown",
     green: "bg-green-500",
     purple: "bg-purple-500",
-    teal: "bg-teal-500",
-    red: "bg-red-500"
+    teal: "bg-teal-500"
   };
 
   const glassColorClasses = {
@@ -56,8 +55,7 @@ export function FeaturesSection() {
     brown: "bg-coffee-brown/20 hover:bg-coffee-brown/30 border-coffee-brown/30",
     green: "bg-green-500/20 hover:bg-green-500/30 border-green-400/30",
     purple: "bg-purple-500/20 hover:bg-purple-500/30 border-purple-400/30",
-    teal: "bg-teal-500/20 hover:bg-teal-500/30 border-teal-400/30",
-    red: "bg-red-500/20 hover:bg-red-500/30 border-red-400/30"
+    teal: "bg-teal-500/20 hover:bg-teal-500/30 border-teal-400/30"
   };
 
   return (

@@ -18,7 +18,7 @@ export function FeaturesSection() {
       icon: Percent,
       title: "Lower Fees",
       description: "Enjoy reduced transaction costs compared to traditional payment methods and credit cards.",
-      color: "red"
+      color: "brown"
     },
     {
       icon: Lock,
@@ -46,8 +46,7 @@ export function FeaturesSection() {
     brown: "bg-coffee-brown",
     green: "bg-green-500",
     purple: "bg-purple-500",
-    teal: "bg-teal-500",
-    red: "bg-red-500"
+    teal: "bg-teal-500"
   };
 
   const glassColorClasses = {
@@ -56,8 +55,7 @@ export function FeaturesSection() {
     brown: "bg-coffee-brown/20 hover:bg-coffee-brown/30 border-coffee-brown/30",
     green: "bg-green-500/20 hover:bg-green-500/30 border-green-400/30",
     purple: "bg-purple-500/20 hover:bg-purple-500/30 border-purple-400/30",
-    teal: "bg-teal-500/20 hover:bg-teal-500/30 border-teal-400/30",
-    red: "bg-red-500/20 hover:bg-red-500/30 border-red-400/30"
+    teal: "bg-teal-500/20 hover:bg-teal-500/30 border-teal-400/30"
   };
 
   return (
@@ -77,7 +75,7 @@ export function FeaturesSection() {
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                className={`stagger-item ${glassColorClasses[feature.color as keyof typeof glassColorClasses]} backdrop-blur-md border rounded-xl p-6 text-center group hover-lift shadow-lg hover:shadow-xl transition-all duration-300`}
+                className="stagger-item bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-xl p-6 text-center group hover-lift shadow-lg hover:shadow-xl transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`w-16 h-16 ${colorClasses[feature.color as keyof typeof colorClasses]} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 crypto-glow`}>

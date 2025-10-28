@@ -93,7 +93,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #032524 0%, rgba(3, 37, 36, 0.8) 25%, rgba(3, 37, 36, 0.6) 50%, rgba(3, 37, 36, 0.8) 75%, #032524 100%);
+    background: linear-gradient(135deg, #032524 0%, transparent 50%, #032524 100%);
     z-index: -1;
   }
 
