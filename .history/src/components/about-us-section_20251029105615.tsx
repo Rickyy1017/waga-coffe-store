@@ -1,3 +1,4 @@
+import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Coffee, Users, Award, Heart } from "lucide-react";
 

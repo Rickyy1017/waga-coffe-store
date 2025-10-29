@@ -1,3 +1,4 @@
+import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Coffee, Users, Award, Heart } from "lucide-react";
 
@@ -39,7 +40,7 @@ export function AboutUsSection() {
 
           <div className="grid grid-cols-2 gap-6">
             <div className="space-y-6">
-              <div className="bg-amber-500/20 backdrop-blur-md border border-amber-400/30 rounded-lg p-4 hover:bg-amber-500/30 transition-colors">
+              <div className="bg-white/20 backdrop-blur-lg border border-white/30 rounded-lg p-4 hover:bg-white/30 transition-colors">
                 <Coffee className="h-8 w-8 text-amber-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Premium Beans</h3>
                 <p className="text-white/80 text-sm">
@@ -47,7 +48,7 @@ export function AboutUsSection() {
                 </p>
               </div>
 
-              <div className="bg-blue-500/20 backdrop-blur-md border border-blue-400/30 rounded-lg p-4 hover:bg-blue-500/30 transition-colors">
+              <div className="bg-white/20 backdrop-blur-lg border border-white/30 rounded-lg p-4 hover:bg-white/30 transition-colors">
                 <Users className="h-8 w-8 text-blue-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Fair Trade</h3>
                 <p className="text-white/80 text-sm">
@@ -57,7 +58,7 @@ export function AboutUsSection() {
             </div>
 
             <div className="space-y-6 mt-12">
-              <div className="bg-green-500/20 backdrop-blur-md border border-green-400/30 rounded-lg p-4 hover:bg-green-500/30 transition-colors">
+              <div className="bg-white/20 backdrop-blur-lg border border-white/30 rounded-lg p-4 hover:bg-white/30 transition-colors">
                 <Award className="h-8 w-8 text-green-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Quality Assured</h3>
                 <p className="text-white/80 text-sm">
@@ -65,7 +66,7 @@ export function AboutUsSection() {
                 </p>
               </div>
 
-              <div className="bg-red-500/20 backdrop-blur-md border border-red-400/30 rounded-lg p-4 hover:bg-red-500/30 transition-colors">
+              <div className="bg-white/20 backdrop-blur-lg border border-white/30 rounded-lg p-4 hover:bg-white/30 transition-colors">
                 <Heart className="h-8 w-8 text-red-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Community Focused</h3>
                 <p className="text-white/80 text-sm">

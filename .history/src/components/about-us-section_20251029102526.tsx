@@ -1,3 +1,4 @@
+import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Coffee, Users, Award, Heart } from "lucide-react";
 
@@ -5,41 +6,41 @@ export function AboutUsSection() {
   return (
     <section className="py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white/20 backdrop-blur-lg border border-white/30 rounded-3xl p-8 md:p-12">
+        <div className="bg-transparent backdrop-blur-md border border-white/30 rounded-3xl p-8 md:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <Badge className="mb-4 bg-white/20 backdrop-blur-lg border border-white/30">
+            <Badge className="mb-4 bg-transparent backdrop-blur-sm border border-white/30">
               Our Story
             </Badge>
-            <h2 className="text-4xl font-bold text-white mb-6 rounded-lg p-4 inline-block">
-              Crafting Exceptional Coffee Since 2024
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Crafting Exceptional Coffee Since 2018
             </h2>
-            <p className="text-lg text-white/80 mb-6 rounded-lg p-4">
+            <p className="text-lg text-white/80 mb-6">
               WAGA Coffee was born from a passion for connecting coffee lovers with the finest beans from around the world. We believe that great coffee starts with respect for the land, the farmers, and the traditional methods that have been perfected over generations.
             </p>
-            <p className="text-lg text-white/80 mb-8 rounded-lg p-4">
+            <p className="text-lg text-white/80 mb-8">
               Our commitment to quality means we work directly with small-scale farmers, ensuring fair prices and sustainable practices. Every bag of WAGA Coffee tells a story of dedication, craftsmanship, and the pursuit of perfection.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="text-center bg-white/20 backdrop-blur-lg border border-white/30 rounded-lg p-4">
-                <div className="text-3xl font-bold text-white mb-2">4+</div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">50+</div>
                 <div className="text-white/80">Farm Partners</div>
               </div>
-              <div className="text-center bg-white/20 backdrop-blur-lg border border-white/30 rounded-lg p-4">
-                <div className="text-3xl font-bold text-white mb-2">3</div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">15</div>
                 <div className="text-white/80">Countries</div>
               </div>
             </div>
 
-            {/* <Button className="bg-white/20 backdrop-blur-lg border border-white/30 hover:bg-white/30">
+            <Button className="bg-transparent backdrop-blur-sm border border-white/30 hover:bg-white/10">
               Learn More About Our Process
-            </Button> */}
+            </Button>
           </div>
 
           <div className="grid grid-cols-2 gap-6">
             <div className="space-y-6">
-              <div className="bg-amber-500/20 backdrop-blur-md border border-amber-400/30 rounded-lg p-4 hover:bg-amber-500/30 transition-colors">
+              <div className="bg-transparent backdrop-blur-sm border border-white/30 rounded-lg p-4 hover:bg-white/5 transition-colors">
                 <Coffee className="h-8 w-8 text-amber-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Premium Beans</h3>
                 <p className="text-white/80 text-sm">
@@ -47,7 +48,7 @@ export function AboutUsSection() {
                 </p>
               </div>
 
-              <div className="bg-blue-500/20 backdrop-blur-md border border-blue-400/30 rounded-lg p-4 hover:bg-blue-500/30 transition-colors">
+              <div className="bg-transparent backdrop-blur-sm border border-white/30 rounded-lg p-4 hover:bg-white/5 transition-colors">
                 <Users className="h-8 w-8 text-blue-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Fair Trade</h3>
                 <p className="text-white/80 text-sm">
@@ -57,7 +58,7 @@ export function AboutUsSection() {
             </div>
 
             <div className="space-y-6 mt-12">
-              <div className="bg-green-500/20 backdrop-blur-md border border-green-400/30 rounded-lg p-4 hover:bg-green-500/30 transition-colors">
+              <div className="bg-transparent backdrop-blur-sm border border-white/30 rounded-lg p-4 hover:bg-white/5 transition-colors">
                 <Award className="h-8 w-8 text-green-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Quality Assured</h3>
                 <p className="text-white/80 text-sm">
@@ -65,7 +66,7 @@ export function AboutUsSection() {
                 </p>
               </div>
 
-              <div className="bg-red-500/20 backdrop-blur-md border border-red-400/30 rounded-lg p-4 hover:bg-red-500/30 transition-colors">
+              <div className="bg-transparent backdrop-blur-sm border border-white/30 rounded-lg p-4 hover:bg-white/5 transition-colors">
                 <Heart className="h-8 w-8 text-red-400 mb-4" />
                 <h3 className="font-semibold text-white mb-2">Community Focused</h3>
                 <p className="text-white/80 text-sm">
