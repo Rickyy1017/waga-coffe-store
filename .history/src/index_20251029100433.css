@@ -151,10 +151,10 @@
 
     /* Specific fixes for About Us section glassmorphism */
     .about-us-button {
-      background-color: rgba(3, 37, 36, 0.2) !important;
+      background-color: rgba(255, 255, 255, 0.2) !important;
       -webkit-backdrop-filter: blur(12px) !important;
       backdrop-filter: blur(12px) !important;
-      border: 1px solid rgba(3, 37, 36, 0.3) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
     }
 
     /* Force glassmorphism on all About Us section elements */
@@ -173,10 +173,10 @@
     }
 
     .about-us-badge {
-      background-color: rgba(3, 37, 36, 0.2) !important;
+      background-color: rgba(255, 255, 255, 0.2) !important;
       -webkit-backdrop-filter: blur(4px) !important;
       backdrop-filter: blur(4px) !important;
-      border: 1px solid rgba(3, 37, 36, 0.3) !important;
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
     }
   }
 }
